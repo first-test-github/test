@@ -1,0 +1,35 @@
+﻿<Page x:Class="Calc.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+       xmlns:cm="clr-namespace:System.ComponentModel;assembly=System"
+      mc:Ignorable="d" 
+      d:DesignHeight="445" d:DesignWidth="395"
+	Title="计算">
+    <Page.Resources>
+        <cm:BackgroundWorker x:Key="backgroundWorker"
+          WorkerReportsProgress="True" WorkerSupportsCancellation="True"
+          DoWork="backgroundWorker_DoWork" ProgressChanged="backgroundWorker_ProgressChanged" 
+          RunWorkerCompleted="backgroundWorker_RunWorkerCompleted"></cm:BackgroundWorker>
+    </Page.Resources>
+
+
+    <Grid Height="437" ShowGridLines="True" SnapsToDevicePixels="True" Width="396">
+        <Grid.Background>
+            <LinearGradientBrush>
+                <GradientStop Offset="0.615" Color="#075295"></GradientStop>
+                <GradientStop Offset="0.035" Color="#39CFFB"></GradientStop>
+                <GradientStop Offset="0.852" Color="#FF0752E8"></GradientStop>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button Content="开始计算" Height="23" HorizontalAlignment="Left" Margin="167,365,0,0" Name="button_Start" VerticalAlignment="Top" Width="82" Click="button_Start_Click" />
+        <Button Content="配置时间" Height="23" HorizontalAlignment="Left" Margin="163,141,0,0" Name="button2" VerticalAlignment="Top" Width="75" Click="button2_Click" />
+        <Button Content="配置字段" Height="23" HorizontalAlignment="Left" Margin="251,141,0,0" Name="button1" VerticalAlignment="Top" Width="75" Click="button1_Click" />
+        <TextBox Height="23" Margin="41,46,95,0" Name="textBox2" VerticalAlignment="Top" />
+        <Button Content="..." Height="23" Margin="291,46,61,0" Name="button3" VerticalAlignment="Top" Click="button3_Click" />
+        <Button Content="关闭软件" Height="23" HorizontalAlignment="Left" Margin="254,365,0,0" Name="button4" VerticalAlignment="Top" Width="82" Click="button4_Click" />
+        <ComboBox Height="23" Margin="140,92,60,0" Name="comboBox1" VerticalAlignment="Top" />
+        <ProgressBar  Margin="0,298,-2,0" Height="13" HorizontalAlignment="Right"  Name="progressBar1" VerticalAlignment="Top" Width="402" Background="WhiteSmoke" Foreground="Blue" BorderBrush="CadetBlue" BorderThickness="3"  />
+    </Grid>
+</Page>
